@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="長引くひざの痛みを根本から改善。ひざlabを運営するセルリバイブリハビリセンターが直接ご相談をお受けします。LINE無料相談受付中。" />
+  <title>ひざの痛みを根本から改善｜セルリバイブリハビリセンター</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ========================================
+       CSS Variables & Reset
+    ======================================== */
+    :root {
+      --main:       #5F9994;
+      --main-dark:  #4a7d79;
+      --main-darker:#3a6460;
+      --main-light: #7ab8b3;
+      --main-pale:  #e8f4f3;
+      --main-bg:    #f2f9f8;
+      --line-green: #06C755;
+      --line-hover: #04a645;
+      --text-dark:  #1a2e2d;
+      --text-mid:   #3d5a58;
+      --text-light: #6b8e8c;
+      --white:      #ffffff;
+      --off-white:  #f8fbfa;
+      --border:     #cce5e3;
+      --shadow:     0 4px 24px rgba(95,153,148,0.15);
+      --shadow-lg:  0 8px 40px rgba(95,153,148,0.22);
+      --radius:     16px;
+      --radius-sm:  10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'メイリオ', sans-serif;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ========================================
+       Utility
+    ======================================== */
+    .section-wrap {
+      padding: 56px 20px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: clamp(22px, 5.5vw, 30px);
+      font-weight: 900;
+      line-height: 1.45;
+      color: var(--text-dark);
+      margin-bottom: 28px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-title span {
+      color: var(--main);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--main);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ========================================
+       LINE Button (shared)
+    ======================================== */
+    .btn-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      background: var(--line-green);
+      color: var(--white);
+      font-size: 19px;
+      font-weight: 900;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      line-height: 1.35;
+      box-shadow: 0 6px 24px rgba(6,199,85,0.38);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-line:hover  { background: var(--line-hover); box-shadow: 0 8px 32px rgba(6,199,85,0.46); }
+    .btn-line:active { transform: scale(0.97); }
+
+    .btn-line svg {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+
+    .microcopy {
+      text-align: center;
+      font-size: 15px;
+      color: var(--text-mid);
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+
+    .microcopy strong {
+      color: var(--main-dark);
+    }
+
+    /* ========================================
+       Sticky Header
+    ======================================== */
+    #sticky-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--white);
+      border-bottom: 2px solid var(--main-pale);
+      box-shadow: 0 2px 16px rgba(95,153,148,0.12);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    #sticky-header .header-logo {
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--main-dark);
+      line-height: 1.3;
+      flex-shrink: 0;
+    }
+
+    #sticky-header .header-logo span {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    #sticky-header .btn-line-sm {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--line-green);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 900;
+      padding: 11px 18px;
+      border-radius: 100px;
+      white-space: nowrap;
+      box-shadow: 0 3px 12px rgba(6,199,85,0.35);
+      transition: background 0.2s, transform 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    #sticky-header .btn-line-sm:hover  { background: var(--line-hover); }
+    #sticky-header .btn-line-sm:active { transform: scale(0.97); }
+
+    #sticky-header .btn-line-sm svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* ========================================
+       Hero / First View
+    ======================================== */
+    #hero {
+      margin-top: 64px;
+      background: linear-gradient(160deg, #3a6460 0%, var(--main) 55%, var(--main-light) 100%);
+      padding: 52px 20px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 260px; height: 260px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 320px; height: 320px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+
+    .hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 22px;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-eyebrow::before {
+      content: '▶';
+      font-size: 10px;
+    }
+
+    .hero-catch {
+      font-size: clamp(23px, 6.2vw, 36px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.5;
+      margin-bottom: 28px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      letter-spacing: -0.01em;
+    }
+
+    .hero-catch .accent {
+      background: rgba(255,255,255,0.2);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      backdrop-filter: blur(4px);
+    }
+
+    .trust-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .trust-text {
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .hero-cta-area {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-cta-area .microcopy {
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 14px;
+    }
+
+    .hero-cta-area .microcopy strong {
+      color: var(--white);
+    }
+
+    /* ========================================
+       Section: 共感（お悩み）
+    ======================================== */
+    #pain {
+      background: var(--off-white);
+    }
+
+    .pain-inner {
+      padding: 56px 20px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--white);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px 18px;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.55;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .check-item:hover {
+      border-color: var(--main);
+      box-shadow: var(--shadow);
+    }
+
+    .check-mark {
+      width: 28px;
+      height: 28px;
+      background: var(--main);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .check-mark::after {
+      content: '✓';
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .pain-closing {
+      margin-top: 28px;
+      background: var(--main-pale);
+      border-left: 5px solid var(--main);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 18px 20px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--main-darker);
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       Section: 解決策（なぜ繰り返すのか）
+    ======================================== */
+    #reason {
+      background: var(--white);
+    }
+
+    .reason-box {
+      background: var(--main-pale);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      margin-bottom: 24px;
+    }
+
+    .reason-box-title {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--main-darker);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .reason-box-title::before {
+      content: '⚠';
+      font-size: 22px;
+    }
+
+    .reason-box p {
+      font-size: 17px;
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+
+    .solution-box {
+      background: linear-gradient(135deg, var(--main-dark) 0%, var(--main) 100%);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      color: var(--white);
+    }
+
+    .solution-box-title {
+      font-size: 19px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .solution-box-title::before {
+      content: '✦';
+      font-size: 18px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .solution-box p {
+      font-size: 17px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .solution-box strong {
+      color: var(--white);
+      background: rgba(255,255,255,0.15);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    /* ========================================
+       Section: 選ばれる理由
+    ======================================== */
+    #reasons {
+      background: var(--main-bg);
+    }
+
+    .reason-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .reason-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      box-shadow: var(--shadow);
+      border-top: 5px solid var(--main);
+      position: relative;
+    }
+
+    .reason-num {
+      position: absolute;
+      top: -1px;
+      right: 20px;
+      background: var(--main);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 900;
+      padding: 4px 14px;
+      border-radius: 0 0 10px 10px;
+      letter-spacing: 0.08em;
+    }
+
+    .reason-card-icon {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .reason-card-title {
+      font-size: 19px;
+      font-weight: 900;
+      color: var(--main-dark);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .reason-card-body {
+      font-size: 16px;
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+
+    /* ========================================
+       Section: 料金・オファー
+    ======================================== */
+    #pricing {
+      background: var(--white);
+    }
+
+    .pricing-table {
+      background: var(--off-white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 2px solid var(--border);
+      margin-bottom: 28px;
+    }
+
+    .pricing-row {
+      display: flex;
+      align-items: center;
+      padding: 18px 20px;
+      gap: 16px;
+    }
+
+    .pricing-row + .pricing-row {
+      border-top: 1px solid var(--border);
+    }
+
+    .pricing-label {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-mid);
+      flex: 1;
+      line-height: 1.4;
+    }
+
+    .pricing-value {
+      font-size: 17px;
+      font-weight: 900;
+      color: var(--text-dark);
+      text-align: right;
+      line-height: 1.3;
+    }
+
+    .pricing-value .unit {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    .pricing-value.strike {
+      text-decoration: line-through;
+      color: var(--text-light);
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    /* Special offer box */
+    .offer-box {
+      background: linear-gradient(135deg, #1a5c26 0%, #06C755 100%);
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .offer-box::before {
+      content: '';
+      position: absolute;
+      top: -50px; right: -50px;
+      width: 180px; height: 180px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+    }
+
+    .offer-ribbon {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.22);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 900;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+      letter-spacing: 0.04em;
+    }
+
+    .offer-title {
+      font-size: clamp(20px, 5.5vw, 26px);
+      font-weight: 900;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .offer-price {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .offer-price .big {
+      font-size: clamp(44px, 12vw, 58px);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .offer-price .currency {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .offer-price .orig {
+      font-size: 15px;
+      text-decoration: line-through;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .offer-detail {
+      font-size: 14px;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.65;
+      background: rgba(0,0,0,0.12);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 20px;
+    }
+
+    .offer-box .btn-line {
+      background: var(--white);
+      color: #06C755;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .offer-box .btn-line:hover { background: #f0fff6; }
+
+    /* ========================================
+       Section: 利用者の声
+    ======================================== */
+    #voices {
+      background: var(--main-bg);
+    }
+
+    .voice-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .voice-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .voice-card::before {
+      content: '"';
+      position: absolute;
+      top: 12px;
+      left: 18px;
+      font-size: 64px;
+      color: var(--main-pale);
+      font-family: Georgia, serif;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .voice-star {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 12px;
+    }
+
+    .voice-star span {
+      color: #F59E0B;
+      font-size: 20px;
+    }
+
+    .voice-text {
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--text-dark);
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 16px;
+    }
+
+    .voice-profile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .voice-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--main-pale);
+      border: 2px solid var(--main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .voice-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--main-dark);
+      line-height: 1.3;
+    }
+
+    .voice-sub {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    .voice-tag {
+      display: inline-block;
+      background: var(--main-pale);
+      color: var(--main-dark);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-top: 4px;
+    }
+
+    /* ========================================
+       Section: 最終 CTA
+    ======================================== */
+    #final-cta {
+      background: linear-gradient(160deg, var(--main-darker) 0%, var(--main) 60%, var(--main-light) 100%);
+      padding: 60px 20px;
+    }
+
+    .final-cta-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .final-cta-inner .section-title {
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .final-cta-sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 32px;
+      line-height: 1.65;
+    }
+
+    .final-cta-inner .microcopy {
+      color: rgba(255,255,255,0.78);
+    }
+
+    .final-cta-inner .microcopy strong {
+      color: var(--white);
+    }
+
+    .free-label {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 6px 18px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ========================================
+       Section: アクセス
+    ======================================== */
+    #access {
+      background: var(--white);
+    }
+
+    .access-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .access-card {
+      border: 2px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .access-card:hover {
+      border-color: var(--main);
+      box-shadow: var(--shadow);
+    }
+
+    .access-card.coming {
+      opacity: 0.65;
+      background: var(--off-white);
+    }
+
+    .access-badge {
+      background: var(--main);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 900;
+      padding: 4px 12px;
+      border-radius: 100px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .access-card.coming .access-badge {
+      background: var(--text-light);
+    }
+
+    .access-name {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--main-dark);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .access-detail {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    .access-coming-tag {
+      display: inline-block;
+      background: var(--main-pale);
+      color: var(--text-mid);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 100px;
+      margin-top: 4px;
+    }
+
+    /* ========================================
+       Footer
+    ======================================== */
+    footer {
+      background: var(--main-darker);
+      color: rgba(255,255,255,0.8);
+      padding: 40px 20px 36px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 17px;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .footer-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      text-decoration: underline;
+      text-decoration-color: rgba(255,255,255,0.3);
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ========================================
+       Scroll CTA Button (院選択へ誘導)
+    ======================================== */
+    .btn-scroll-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      background: transparent;
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 900;
+      border-radius: 100px;
+      border: 3px solid rgba(255,255,255,0.85);
+      cursor: pointer;
+      text-align: center;
+      line-height: 1.35;
+      transition: background 0.2s, transform 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-scroll-cta:hover  { background: rgba(255,255,255,0.12); }
+    .btn-scroll-cta:active { transform: scale(0.97); }
+
+    /* 院選択グリッド（アクセスセクション内） */
+    .location-line-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .location-line-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 16px 12px;
+      background: var(--line-green);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 900;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      line-height: 1.35;
+      box-shadow: 0 4px 16px rgba(6,199,85,0.3);
+      transition: background 0.2s, transform 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .location-line-btn:hover  { background: var(--line-hover); }
+    .location-line-btn:active { transform: scale(0.97); }
+
+    .location-line-btn.coming {
+      background: #9eaaa9;
+      box-shadow: none;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    .location-line-btn .loc-name {
+      font-size: 17px;
+    }
+
+    .location-line-btn .loc-sub {
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    .location-line-btn svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* ========================================
+       Goal statement
+    ======================================== */
+    .goal-statement {
+      text-align: center;
+      margin-top: 28px;
+      padding: 22px 20px;
+      background: var(--main-pale);
+      border-radius: var(--radius);
+      border: 2px solid var(--main);
+    }
+
+    .goal-statement .goal-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--main);
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .goal-statement .goal-text {
+      font-size: clamp(18px, 5vw, 22px);
+      font-weight: 900;
+      color: var(--main-darker);
+      line-height: 1.5;
+    }
+
+    /* ========================================
+       Floating CTA Button
+    ======================================== */
+    #float-cta {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      width: calc(100% - 32px);
+      max-width: 440px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.3s;
+      transform: translateX(-50%) translateY(12px);
+    }
+
+    #float-cta.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    #float-cta .btn-line {
+      box-shadow: 0 8px 32px rgba(6,199,85,0.5), 0 2px 8px rgba(0,0,0,0.15);
+      font-size: 17px;
+      padding: 18px 20px;
+    }
+
+    /* ========================================
+       Divider
+    ======================================== */
+    .wave-divider {
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .wave-divider svg {
+      display: block;
+      width: 100%;
+    }
+
+    /* ========================================
+       Responsive – Desktop enhancement
+    ======================================== */
+    @media (min-width: 640px) {
+      .reason-cards,
+      .voice-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .hero-trust {
+        flex-direction: row;
+      }
+
+      .trust-item { flex: 1; }
+
+      .access-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      #float-cta { display: none; }
+    }
+
+    /* ========================================
+       Animations
+    ======================================== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.65s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.25s; }
+    .delay-3 { animation-delay: 0.4s; }
+    .delay-4 { animation-delay: 0.55s; }
+
+    /* Intersection observer target
+       opacity は常に1（非表示にしない）。
+       スライドアニメーションのみ付与することでコンテンツの消失を防ぐ。 */
+    .reveal {
+      opacity: 1;
+      transform: translateY(18px);
+      transition: transform 0.55s ease;
+    }
+
+    .reveal.in-view {
+      transform: translateY(0);
+    }
+
+    .reveal.delay-1 { transition-delay: 0.08s; }
+    .reveal.delay-2 { transition-delay: 0.18s; }
+    .reveal.delay-3 { transition-delay: 0.28s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .fade-up {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==========================================
+     Sticky Header
+=========================================== -->
+<header id="sticky-header">
+  <div class="header-logo">
+    セルリバイブ<br>リハビリセンター
+    <span>ひざ専門リハビリ施設</span>
+  </div>
+  <a href="#access" class="btn-line-sm" id="header-line-btn">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.070 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+    </svg>
+    LINE 無料相談
+  </a>
+</header>
+
+<!-- ==========================================
+     Hero / First View
+=========================================== -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow fade-up">ひざlabをご覧の方へ</div>
+    <p style="font-size:12px;color:rgba(255,255,255,0.6);margin-bottom:18px;margin-top:-10px;">※ ひざlab（@hiza_labo）はセルリバイブリハビリセンターが運営するオンラインコンテンツです</p>
+
+    <h1 class="hero-catch fade-up delay-1">
+      長引くひざの痛みでお悩みの方へ。<br>
+      日常生活で感じる<span class="accent">痛みや違和感</span>を<br>
+      根本から改善しませんか？
+    </h1>
+
+    <div class="hero-trust fade-up delay-2">
+      <div class="trust-item">
+        <div class="trust-icon">🦵</div>
+        <div class="trust-text">痛みの改善から趣味・スポーツの<br>QOL向上まで対応</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">👨‍⚕️</div>
+        <div class="trust-text">有資格者による<br>マンツーマン指導</div>
+      </div>
+    </div>
+
+    <div class="hero-cta-area fade-up delay-3">
+      <p class="microcopy"><strong>各院の公式LINEから無料相談できます</strong><br>お近くの院を選んでメッセージしてください</p>
+      <a href="#access" class="btn-scroll-cta">
+        お近くの院を選んでご相談する ↓
+      </a>
+      <p style="text-align:center;font-size:13px;color:rgba(255,255,255,0.65);margin-top:12px;">銀座院 ／ 名古屋院 ／ 新宿院 ／ 大阪院（近日開院）</p>
+      <p style="text-align:center;font-size:13px;color:rgba(255,255,255,0.55);margin-top:6px;">✅ 完全無料 ✅ 24時間受付 ✅ しつこい勧誘なし</p>
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<div class="wave-divider" style="background:var(--off-white);">
+  <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,48 L0,24 Q360,0 720,24 Q1080,48 1440,24 L1440,48 Z" fill="#5F9994"/>
+  </svg>
+</div>
+
+<!-- ==========================================
+     Section 2: 共感（お悩み）
+=========================================== -->
+<section id="pain">
+  <div class="pain-inner">
+    <span class="badge reveal">あなたのお悩み、聞かせてください</span>
+    <h2 class="section-title reveal delay-1">
+      こんなお悩み<span>ありませんか？</span>
+    </h2>
+
+    <div class="checklist">
+      <div class="check-item reveal delay-1">
+        <div class="check-mark"></div>
+        <span>SNSの動画のストレッチを試しているが、<br><strong>プロに直接状態を診てもらいたい</strong></span>
+      </div>
+      <div class="check-item reveal delay-2">
+        <div class="check-mark"></div>
+        <span>趣味のゴルフやウォーキング、スポーツを<br><strong>ひざへの不安なく思いきり楽しみたい</strong></span>
+      </div>
+      <div class="check-item reveal delay-3">
+        <div class="check-mark"></div>
+        <span>ひざの痛みのせいで、<br><strong>旅行や趣味を諦めている</strong></span>
+      </div>
+    </div>
+
+    <div class="pain-closing reveal">
+      ひとつでも当てはまるなら、あなたのひざには「根本から改善できる可能性」があります。
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<div class="wave-divider" style="background:var(--white);">
+  <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 L0,24 Q360,48 720,24 Q1080,0 1440,24 L1440,0 Z" fill="var(--off-white)"/>
+  </svg>
+</div>
+
+<!-- ==========================================
+     Section 3: なぜ繰り返すのか
+=========================================== -->
+<section id="reason">
+  <div class="section-wrap">
+    <span class="badge reveal">痛みが繰り返す本当の理由</span>
+    <h2 class="section-title reveal delay-1">
+      なぜ、あなたのひざの痛みは<span>繰り返すのか？</span>
+    </h2>
+
+    <div class="reason-box reveal delay-2">
+      <p class="reason-box-title">多くの方が陥るワナ</p>
+      <p>
+        薬や注射で一時的に痛みが和らいでも、普段の<strong style="color:var(--main-darker)">「関節の動かし方」</strong>や<strong style="color:var(--main-darker)">「姿勢・歩き方」</strong>が悪いままでは、ひざへの負担は変わらず、痛みは必ず戻ってきます。
+      </p>
+    </div>
+
+    <div class="solution-box reveal delay-3">
+      <p class="solution-box-title">セルリバの根本改善アプローチ</p>
+      <p>
+        当院では、まず失われた柔軟性をしっかり取り戻した後に、<strong>「正しい歩き方を身につける根本治療」</strong>を行います。そして最終的には、専門家に頼り続けるのではなく、<strong>「ご自身で体の状態を把握し、管理できる状態」</strong>になっていただくことを目指しています。
+      </p>
+    </div>
+
+    <div class="goal-statement reveal">
+      <p class="goal-label">セルリバのゴール</p>
+      <p class="goal-text">「自分で体を管理できる<br>状態になること」</p>
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<div class="wave-divider" style="background:var(--main-bg);">
+  <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,48 L0,24 Q360,0 720,24 Q1080,48 1440,24 L1440,48 Z" fill="var(--white)"/>
+  </svg>
+</div>
+
+<!-- ==========================================
+     Section 4: 選ばれる3つの理由
+=========================================== -->
+<section id="reasons">
+  <div class="section-wrap">
+    <span class="badge reveal">他院との違い</span>
+    <h2 class="section-title reveal delay-1">
+      セルリバが選ばれる<span>3つの理由</span>
+    </h2>
+
+    <div class="reason-cards">
+
+      <div class="reason-card reveal delay-1">
+        <span class="reason-num">REASON 01</span>
+        <div class="reason-card-icon">👤</div>
+        <h3 class="reason-card-title">完全予約制・有資格者による個別治療</h3>
+        <p class="reason-card-body">一人ひとりの状態を丁寧に評価し、あなただけのオーダーメイドプログラムをご提案。大きな病院では難しい「ていねいな個別対応」を実現しています。</p>
+      </div>
+
+      <div class="reason-card reveal delay-2">
+        <span class="reason-num">REASON 02</span>
+        <div class="reason-card-icon">🔗</div>
+        <h3 class="reason-card-title">必要に応じた総合的なフォローアップ</h3>
+        <p class="reason-card-body">リハビリだけで解決できるケースがほとんどですが、状態によっては再生医療に特化したクリニックをはじめとする医療機関との連携もご案内可能。一人ひとりに合った最適な道筋をご提案します。</p>
+      </div>
+
+      <div class="reason-card reveal delay-3" style="grid-column: 1 / -1;">
+        <span class="reason-num">REASON 03</span>
+        <div class="reason-card-icon">🏆</div>
+        <h3 class="reason-card-title">圧倒的な実績を持つ専門家陣</h3>
+        <p class="reason-card-body">全国で<strong>8,000人以上の療法士を指導</strong>する石田センター長、スポーツや整形疾患を専門とし、ゲストから絶大な信頼を得る中川センター長をはじめ、質の高いスタッフが担当いたします。豊富な経験と実績で、あなたの改善をサポートします。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<div class="wave-divider" style="background:var(--white);">
+  <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 L0,24 Q360,48 720,24 Q1080,0 1440,24 L1440,0 Z" fill="var(--main-bg)"/>
+  </svg>
+</div>
+
+<!-- ==========================================
+     Section 5: 料金・特別オファー
+=========================================== -->
+<section id="pricing">
+  <div class="section-wrap">
+    <span class="badge reveal">料金案内</span>
+    <h2 class="section-title reveal delay-1">
+      料金と<span>特別なオファー</span>
+    </h2>
+
+    <div class="pricing-table reveal delay-2">
+      <div class="pricing-row">
+        <div class="pricing-label">🔁 再来料金<br><span style="font-size:13px;font-weight:400;color:var(--text-light)">60分</span></div>
+        <div class="pricing-value">16,500<span class="unit">円</span></div>
+      </div>
+      <div class="pricing-row" style="background:var(--main-pale);">
+        <div class="pricing-label" style="color:var(--main-darker);font-weight:900;">✨ 初回体験<br><span style="font-size:13px;font-weight:400;">SNS限定特典</span></div>
+        <div>
+          <div class="pricing-value strike" style="text-align:right;">16,500円</div>
+          <div class="pricing-value" style="color:var(--line-green);font-size:26px;text-align:right;">→ 0<span class="unit" style="font-size:14px;">円</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="offer-box reveal delay-3">
+      <div class="offer-ribbon">🎁 ひざlab ご覧の方限定</div>
+      <p class="offer-title">
+        LINE追加で<br>「初回体験無料クーポン」<br>プレゼント！
+      </p>
+      <div class="offer-price">
+        <span class="currency">￥</span>
+        <span class="big">0</span>
+        <div>
+          <span class="orig" style="display:block;">通常 16,500円</span>
+          <span style="font-size:14px;font-weight:700;">/ 60分</span>
+        </div>
+      </div>
+      <div class="offer-detail">
+        ※ セルリバ公式LINEを追加し、「ひざlab見た」とメッセージをお送りください。初回体験セッション（60分）を無料でご提供いたします。<br>
+        ※ 1名様1回限り・初回の方のみ対象となります。
+      </div>
+      <p class="microcopy" style="color:rgba(255,255,255,0.8);margin-bottom:16px;">
+        <strong style="color:var(--white);">まずは気軽にご相談ください</strong><br>
+        相談だけでも大歓迎です
+      </p>
+      <a href="https://lin.ee/UWPaP51" class="btn-line" style="background:var(--white);color:#06C755;">
+        <svg viewBox="0 0 24 24" fill="#06C755" aria-hidden="true" style="width:28px;height:28px;">
+          <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.630 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.070 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+        </svg>
+        無料クーポンをLINEで受け取る
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<div class="wave-divider" style="background:var(--main-bg);">
+  <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,48 L0,24 Q360,0 720,24 Q1080,48 1440,24 L1440,48 Z" fill="var(--white)"/>
+  </svg>
+</div>
+
+<!-- ==========================================
+     Section 6: 利用者の声
+=========================================== -->
+<section id="voices">
+  <div class="section-wrap">
+    <span class="badge reveal">リアルな声</span>
+    <h2 class="section-title reveal delay-1">
+      実際に<span>根本改善を手に入れた</span>方の声
+    </h2>
+
+    <div class="voice-cards">
+
+      <div class="voice-card reveal delay-1">
+        <div class="voice-star">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="voice-text">
+          「姿勢が気になっていたので、インソールを作ることにしました。自分では気づかなかった立ち方や歩き方の癖、その解決策まで分かりやすく教えていただきました。先生もお話ししやすいです。」
+        </p>
+        <div class="voice-profile">
+          <div class="voice-avatar">👩</div>
+          <div>
+            <div class="voice-name">ご利用者様</div>
+            <div class="voice-sub">インソール・姿勢改善</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice-card reveal delay-2">
+        <div class="voice-star">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="voice-text">
+          「両膝や腰など体のあちこちの痛みで生活のしづらさを強く感じるようになり、再生治療後の通院をしています。痛む箇所やその出方など自分の中の『？』に先生がしっかり向き合ってくださり、リハビリ時にはセルフケアやテーピング等も指導してもらい前向きに頑張れています。今では大量の痛み止めの服用もせず日常生活が楽になったうえに、O脚が改善してきているのもこちらに出会えたおかげと感謝しています。」
+        </p>
+        <div class="voice-profile">
+          <div class="voice-avatar">👩</div>
+          <div>
+            <div class="voice-name">ご利用者様</div>
+            <div class="voice-sub">両膝・腰痛・O脚改善</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="text-align:center;font-size:13px;color:var(--text-light);margin-top:20px;">※ 個人の感想であり、効果を保証するものではありません。</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     Section 7: 最終 CTA
+=========================================== -->
+<section id="final-cta">
+  <div class="final-cta-inner">
+    <span class="free-label reveal">✅ 無料相談受付中</span>
+    <h2 class="section-title reveal delay-1">膝のお悩みは<br>LINEで無料相談できます</h2>
+    <p class="final-cta-sub reveal delay-2">
+      「まだ通うか決めていない」「どんな施設か知りたい」<br>
+      そんな方も大歓迎です。<br>まずは気軽にメッセージしてみてください。
+    </p>
+    <p class="microcopy reveal delay-3"><strong>ひざlabをご覧の方は初回体験が無料になります</strong></p>
+    <a href="#access" class="btn-scroll-cta reveal delay-3" style="max-width:460px;">
+      お近くの院を選んでご相談する ↓
+    </a>
+    <p style="text-align:center;font-size:13px;color:rgba(255,255,255,0.55);margin-top:14px;">✅ 完全無料 ✅ 24時間受付 ✅ しつこい勧誘なし</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     Section: アクセス
+=========================================== -->
+<section id="access">
+  <div class="section-wrap">
+    <span class="badge reveal">施設案内</span>
+    <h2 class="section-title reveal delay-1">各院の<span>アクセス</span></h2>
+
+    <p style="font-size:16px;color:var(--text-mid);margin-bottom:8px;" class="reveal">お近くの院をタップして、公式LINEから無料でご相談ください。</p>
+
+    <div class="location-line-grid reveal delay-1">
+
+      <!-- 銀座院 -->
+      <a href="#" class="location-line-btn">
+        <!-- ※ 銀座院の公式LINE URLに差し替えてください -->
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.630 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.070 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        <span class="loc-name">銀座院</span>
+        <span class="loc-sub">東京都中央区</span>
+      </a>
+
+      <!-- 名古屋院 -->
+      <a href="https://lin.ee/UWPaP51" class="location-line-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.630 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.070 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        <span class="loc-name">名古屋院</span>
+        <span class="loc-sub">愛知県名古屋市</span>
+      </a>
+
+      <!-- 新宿院 -->
+      <a href="#" class="location-line-btn">
+        <!-- ※ 新宿院の公式LINE URLに差し替えてください -->
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.630 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.070 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        <span class="loc-name">新宿院</span>
+        <span class="loc-sub">東京都新宿区</span>
+      </a>
+
+      <!-- 大阪院 COMING SOON -->
+      <span class="location-line-btn coming">
+        <span class="loc-name">大阪院</span>
+        <span class="loc-sub" style="font-weight:900;font-size:13px;letter-spacing:0.06em;">COMING SOON</span>
+        <span class="loc-sub">2026年春 開院予定</span>
+      </span>
+
+    </div>
+
+    <p style="text-align:center;font-size:13px;color:var(--text-light);margin-top:16px;" class="reveal">銀座院・新宿院のLINEは準備中です。開設次第こちらに掲載いたします。</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     Footer
+=========================================== -->
+<footer>
+  <div class="footer-logo">セルリバイブリハビリセンター（セルリバ）</div>
+  <div class="footer-sub">ひざ専門・自費リハビリ施設</div>
+
+  <div class="footer-links">
+    <a href="#">プライバシーポリシー</a>
+    <a href="#">特定商取引法に基づく表示</a>
+    <a href="#">お問い合わせ</a>
+  </div>
+
+  <div style="margin-bottom:20px;">
+    <a href="#access" class="btn-line" style="max-width:360px;font-size:15px;padding:16px 20px;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.6);box-shadow:none;">
+      お近くの院を選んでご相談する ↑
+    </a>
+  </div>
+
+  <p class="footer-copy">© 2025 セルリバイブリハビリセンター All Rights Reserved.</p>
+</footer>
+
+<!-- ==========================================
+     Floating CTA (Mobile only)
+=========================================== -->
+<div id="float-cta">
+  <a href="#access" class="btn-line" style="background:var(--main-dark);box-shadow:0 8px 32px rgba(74,125,121,0.5);">
+    無料相談 ／ お近くの院を選ぶ ↓
+  </a>
+</div>
+
+<!-- ==========================================
+     JavaScript
+=========================================== -->
+<script>
+  // Floating CTA: show after scrolling 400px
+  (function () {
+    var floatCta = document.getElementById('float-cta');
+    var heroSection = document.getElementById('hero');
+
+    function onScroll() {
+      var heroBottom = heroSection.getBoundingClientRect().bottom;
+      if (heroBottom < 0) {
+        floatCta.classList.add('visible');
+      } else {
+        floatCta.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  // Intersection Observer: スライドアニメーション（表示は常に保証済み）
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!window.IntersectionObserver) {
+      els.forEach(function (el) { el.classList.add('in-view'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0 });
+    els.forEach(function (el) { observer.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
